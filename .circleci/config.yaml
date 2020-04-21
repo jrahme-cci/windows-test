@@ -1,0 +1,18 @@
+version: 2.1
+
+orbs:
+  win: circleci/windows@2.2.0
+
+jobs:
+  build:
+    executor:
+      name: win/default
+      shell: powershell.exe
+    steps:
+      - checkout
+      - run: systeminfo
+      - run:
+          name: "Check docker"
+          shell: powershell.exe
+          command: |
+            "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin" | Should -Exist"
