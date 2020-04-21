@@ -15,5 +15,4 @@ jobs:
           name: "Check docker"
           shell: powershell.exe
           command: |
-            dir 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin'
-            where MSBuild.exe
+            MSBuild.exe -h
